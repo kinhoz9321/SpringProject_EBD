@@ -13,8 +13,8 @@ public class BookSearchController {
     @Autowired
     private BookSearchService service; 
     
-    //Å°¿öµå°¡ ÀÖÀ»¶§µµ ÀÖ°í ¾øÀ»¶§µµÀÖÀ½ 
-    //ÀÖÀ»¶§´Â °¡Á®°¡°í ¾øÀ»¶§´Â ¾È°¡Á®°¡°í 
+    //Å°ï¿½ï¿½ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
     @RequestMapping("/bookList.do")
     public ModelAndView bookList(@RequestParam(required=false)String keyword){
         ModelAndView mav = new ModelAndView();
