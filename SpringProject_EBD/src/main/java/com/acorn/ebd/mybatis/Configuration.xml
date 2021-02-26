@@ -7,7 +7,7 @@
 	<typeAliases>
 		<typeAlias type="com.acorn.ebd.users.dto.UsersDto"
 			alias="usersDto"/>
-		<typeAlias type="com.acorn.ebd.report.dto.ReportDto" 
+		<typeAlias type="com.acorn.ebd.report.dto.ReportDto"
 			alias="reportDto"/>
 	</typeAliases>
 

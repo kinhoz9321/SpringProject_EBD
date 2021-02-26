@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="report">
-	
+	<insert id="insert" parameterType="reportDto">
+		INSERT INTO  ebd_report
+		(num, writer, content, regdate)
+		VALUES(ebd_report_seq.NEXTVAL, #{writer}, #{content}, SYSDATE)
+	</insert>
 </mapper>

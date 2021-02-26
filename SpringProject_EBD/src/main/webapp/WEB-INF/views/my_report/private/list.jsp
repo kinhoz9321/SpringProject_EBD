@@ -9,8 +9,8 @@
 </head>
 <body>
 <div class="container">
-	<a href="${pageContext.request.contextPath }/my_report/private/insertform.do">+(마이독후감 새글 작성)</a>
-	<h1>마이독후감 목록</h1>
+	<h3>마이 독후감 목록 출력하는 페이지</h3>
+	<a href="${pageContext.request.contextPath }/my_report/private/insertform.do">마이독후감 새글 작성 페이지 이동</a>
 </div>
 </body>
 </html>

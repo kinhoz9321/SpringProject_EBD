@@ -1,11 +1,11 @@
 package com.acorn.ebd.report.controller;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.ebd.report.dto.ReportDto;
@@ -13,34 +13,32 @@ import com.acorn.ebd.report.service.ReportService;
 
 @Controller
 public class ReportController {
+	//의존객체 DI
 	@Autowired
 	private ReportService service;
 	
-	//마이 독후감의 목록을 불러온다. list.jsp 로 이동
-	@RequestMapping("/my_report/private/list")
-	public ModelAndView list(ModelAndView mView, HttpServletRequest request) {
+	//독후감 새글 저장 요청 처리 
+	@RequestMapping(value = "/my_report/private/insert", method=RequestMethod.POST)
+	public String insert(ReportDto dto, HttpSession session) {
+		String writer=(String)session.getAttribute("nick");//나중에 nick 으로 받기?
+		dto.setWriter(writer);
+		service.saveContent(dto);
 		
-		return mView;
+		return "my_report/private/insert";
 	}
 	
-	//마이 독후감의 새글 작성 폼을 불러온다. insertform.jsp 로 이동
+	//독후감 새글 작성 폼 요청 처리
 	@RequestMapping("/my_report/private/insertform")
 	public String insertform() {
 		
 		return "my_report/private/insertform";
 	}
 	
-	//마이 독후감의 새글 작성을 저장한다. insert.jsp 로 이동
-	@RequestMapping("/my_report/private/insert")
-	public String insert() {
+	//마이 독후감 글 목록 요청 처리
+	@RequestMapping("/my_report/private/list")
+	public ModelAndView list(ModelAndView mView) {
 		
-		return "my_report/private/insert";
-	}
-	
-	//마이 독후감의 상세페이지를 불러온다. detail.jsp 로 이동
-	@RequestMapping("/my_report/private/detail")
-	public ModelAndView detail(@RequestParam int num, ModelAndView mView) {
-		
+		mView.setViewName("my_report/private/list");
 		return mView;
 	}
 }
