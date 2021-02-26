@@ -10,12 +10,61 @@
 <body>
 <div class="container">
 	<h1>마이 독후감 작성 폼</h1>
-	<form action="insert.do" method="post">
+	<form action="insert.do" method="post" enctype="multipart/form-data">
+		<!-- 구매처 링크 기능까지는 아직 완성 안됨. -->
+		<div>
+			<label for="search">책검색</label>
+			<button><a href="${pageContext.request.contextPath }/bookList.do">검색</a></button>
+		</div>
+		<div>
+			<label for="title">책제목</label>
+			<input type="text" name="title" id="title"/>
+		</div>
+		<div>
+			<label for="author">작가</label>
+			<input type="text" name="author" id="author"/>
+		</div>
+		<div>
+			<label for="link">구매처 링크</label>
+			<input type="text" name="link" id="link"/>
+		</div>
+		<div>
+			<label for="genre">장르</label>
+			<select name="genre" id="genre">
+				<option value="">선택안함</option>
+				<option value="novel">소설</option>
+				<option value="poem">시</option>
+				<option value="assey">수필</option>
+				<option value="history">역사</option>
+				<option value="art">예술</option>
+				<option value="religion">종교</option>
+				<option value="humanities">인문</option>
+				<option value="philosophy">철학</option>
+				<option value="self-improvement">자기계발</option>
+			</select>
+		</div>
+		<div>
+			<label for="stars">별점</label>
+			<select name="stars" id="stars">
+				<option value="">선택</option>
+				<option value="1">★</option>
+				<option value="2">★★</option>
+				<option value="3">★★★</option>
+				<option value="4">★★★★</option>
+				<option value="5">★★★★★</option>
+			</select>
+		</div>
+		<div>
+			<label for="image">이미지 첨부</label>
+			<input type="file" name="image" id="image"
+				accept=".jpg, .jpeg, .png, .JPG, .JPEG"/>
+		</div>
 		<div>
 			<label for="content">내용</label>
 			<textarea name="content" id="content"></textarea>
 		</div>
 		<button type="submit" onclick="submitContents(this);">저장</button>
+		<button type="reset">취소</button><!-- 스마트 에디터 글은 삭제 안됨. -->
 	</form>
 </div>	
 <script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>

@@ -3,7 +3,7 @@
 <mapper namespace="report">
 	<insert id="insert" parameterType="reportDto">
 		INSERT INTO  ebd_report
-		(num, writer, content, regdate)
-		VALUES(ebd_report_seq.NEXTVAL, #{writer}, #{content}, SYSDATE)
+		(num, writer, genre, stars, imgpath, content, viewcnt, regdate)
+		VALUES(ebd_report_seq.NEXTVAL, #{writer}, #{genre}, #{stars}, #{imgpath}, #{content}, 0, SYSDATE)
 	</insert>
 </mapper>

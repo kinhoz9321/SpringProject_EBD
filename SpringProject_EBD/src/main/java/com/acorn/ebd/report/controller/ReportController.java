@@ -1,6 +1,6 @@
 package com.acorn.ebd.report.controller;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,11 +19,9 @@ public class ReportController {
 	
 	//독후감 새글 저장 요청 처리 
 	@RequestMapping(value = "/my_report/private/insert", method=RequestMethod.POST)
-	public String insert(ReportDto dto, HttpSession session) {
-		String writer=(String)session.getAttribute("nick");//나중에 nick 으로 받기?
-		dto.setWriter(writer);
-		service.saveContent(dto);
+	public String insert(ReportDto dto, HttpServletRequest request) {
 		
+		service.saveContent(dto, request);
 		return "my_report/private/insert";
 	}
 	

@@ -18,5 +18,4 @@ public class ReportDaoImpl implements ReportDao{
 		session.insert("report.insert", dto);
 	}
 	
-	
 }
