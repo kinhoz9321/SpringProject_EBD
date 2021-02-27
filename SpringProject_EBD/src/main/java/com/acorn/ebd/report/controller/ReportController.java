@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.ebd.report.dto.ReportDto;
@@ -34,9 +35,24 @@ public class ReportController {
 	
 	//마이 독후감 글 목록 요청 처리
 	@RequestMapping("/my_report/private/list")
-	public ModelAndView list(ModelAndView mView) {
-		
+	public ModelAndView list(ModelAndView mView, HttpServletRequest request) {
+		service.getList(mView, request);
 		mView.setViewName("my_report/private/list");
 		return mView;
+	}
+	
+	//마이 독후감 글 하나 정보 요청 처리
+	@RequestMapping("/my_report/private/detail")
+	public ModelAndView detail(@RequestParam int num, ModelAndView mView) {
+		service.getDetail(num, mView);
+		mView.setViewName("my_report/private/detail");
+		return mView;
+	}
+	
+	//독후감 삭제 요청 처리
+	@RequestMapping("/my_report/private/delete")
+	public String delete(@RequestParam int num) {
+		service.deleteContent(num);
+		return "my_report/private/delete";
 	}
 }

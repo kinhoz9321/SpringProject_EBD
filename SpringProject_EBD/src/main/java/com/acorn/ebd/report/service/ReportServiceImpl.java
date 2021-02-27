@@ -2,12 +2,14 @@ package com.acorn.ebd.report.service;
 
 
 import java.io.File;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.ebd.report.dao.ReportDao;
 import com.acorn.ebd.report.dto.ReportDto;
@@ -50,6 +52,27 @@ public class ReportServiceImpl implements ReportService{
 		dto.setImgpath("/upload/"+saveFileName);
 		//ReportDao 를 이용해서 DB에 저장하기
 		reportDao.insert(dto);
+	}
+
+	@Override
+	public void getList(ModelAndView mView, HttpServletRequest request) {
+		ReportDto dto=new ReportDto();
+		List<ReportDto> list=reportDao.getList(dto);
+		mView.addObject("list", list);
+		
+	}
+
+	@Override
+	public void getDetail(int num, ModelAndView mView) {
+		ReportDto dto=reportDao.getData(num);
+		mView.addObject("dto", dto);
+		
+	}
+
+	@Override
+	public void deleteContent(int num) {
+		reportDao.delete(num);
+		
 	}
 	
 }
