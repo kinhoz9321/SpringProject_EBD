@@ -41,11 +41,18 @@
 				<option value="humanities">인문</option>
 				<option value="philosophy">철학</option>
 				<option value="self-improvement">자기계발</option>
+				<option value="1">★</option>
 			</select>
 		</div>
 		<div>
 			<label for="stars">평점</label>
-			<input type="text" name="stars" id="stars"/>/5.0
+			<select name="stars" id="stars">
+				<option value="★">★</option>
+				<option value="★★">★★</option>
+				<option value="★★★">★★★</option>
+				<option value="★★★★">★★★★</option>
+				<option value="★★★★★">★★★★★</option>
+			</select>
 		</div>
 		<div>
 			<label for="image">이미지 첨부</label>
