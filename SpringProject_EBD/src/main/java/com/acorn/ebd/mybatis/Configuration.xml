@@ -9,6 +9,8 @@
 			alias="usersDto"/>
 		<typeAlias type="com.acorn.ebd.report.dto.ReportDto"
 			alias="reportDto"/>
+		<typeAlias type="com.acorn.ebd.report.dto.ReportNewDto"
+			alias="reportNewDto"/>
 	</typeAliases>
 
 	
@@ -16,6 +18,7 @@
 	<mappers>
 		<mapper resource="com/acorn/ebd/mybatis/UsersMapper.xml"/>
 		<mapper resource="com/acorn/ebd/mybatis/ReportMapper.xml"/>
+		<mapper resource="com/acorn/ebd/mybatis/ReportNewMapper.xml"/>
 	</mappers>
 
 

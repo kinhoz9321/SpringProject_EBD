@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reportnew">
+	<insert id="insert" parameterType="reportNewDto">
+		INSERT INTO ebd_report_new
+		(num, writer, booktitle, author, title, genre, stars, imgpath, link, content, viewcnt, regdate)
+		VALUES(ebd_report_new_seq.NEXTVAL, #{writer}, #{booktitle}, #{author}, #{title}, #{genre}, #{stars}, #{imgpath}, #{link}, #{content}, 0, SYSDATE)
+	</insert>
+	<select id="getList" parameterType="reportNewDto" resultType="reportNewDto">
+		SELECT num, writer, title, imgpath, regdate
+		FROM ebd_report_new
+	</select>
+	<select id="getData" parameterType="int" resultType="reportNewDto">
+		SELECT num, writer, booktitle, author, title, genre, stars, imgpath, link, content, viewcnt, regdate
+		FROM ebd_report_new
+		WHERE num=#{num}
+	</select>
+</mapper>
