@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>my_report/private/insertform.do</title>
+<title>/my_report/private/updateform.jsp</title>
 </head>
 <body>
 <div class="container">
 	<h1>마이 독후감 작성 폼</h1>
-	<form action="insert.do" method="post" enctype="multipart/form-data">
+	<form action="update.do" method="post" enctype="multipart/form-data">
 		<!-- 구매처 링크 기능까지는 아직 완성 안됨. -->
 		<div>
 			<label for="search">책검색</label>
@@ -30,7 +30,7 @@
 		</div>
 		<div>
 			<label for="genre">장르</label>
-			<select name="genre" id="genre">
+			<select name="genre" id="genre" value="${dto.genre }">
 				<option value="">선택안함</option>
 				<option value="novel">소설</option>
 				<option value="poem">시</option>
@@ -45,7 +45,7 @@
 		</div>
 		<div>
 			<label for="stars">평점</label>
-			<select name="stars" id="stars">
+			<select name="stars" id="stars" value="${dto.stars }">
 				<option value="">선택</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -54,6 +54,7 @@
 				<option value="5">5</option>
 			</select>
 		</div>
+		<!-- 파일 수정 불가 (새로 넣어야 됨) -->
 		<div>
 			<label for="image">이미지 첨부</label>
 			<input type="file" name="image" id="image"
@@ -61,9 +62,9 @@
 		</div>
 		<div>
 			<label for="content">내용</label>
-			<textarea name="content" id="content"></textarea>
+			<textarea name="content" id="content">${dto.content }</textarea>
 		</div>
-		<button type="submit" onclick="submitContents(this);">저장</button>
+		<button type="submit" onclick="submitContents(this);">수정</button>
 		<button type="reset">취소</button><!-- 스마트 에디터 글은 삭제 안됨. -->
 	</form>
 </div>	
@@ -119,6 +120,6 @@
 		var nFontSize = 24;
 		oEditors.getById["content"].setDefaultFont(sDefaultFont, nFontSize);
 	}
-</script>
+</script>	
 </body>
 </html>

@@ -55,4 +55,12 @@ public class ReportController {
 		service.deleteContent(num);
 		return "my_report/private/delete";
 	}
+	
+	//독후감 수정 폼 요청 처리
+	@RequestMapping("/my_report/private/updateform")
+	public ModelAndView updateform(@RequestParam int num, ModelAndView mView) {
+		service.getDetail(num, mView);
+		mView.setViewName("my_report/private/updateform");
+		return mView;
+	}
 }

@@ -17,7 +17,7 @@
 <div class="container">
 	<table>
 		<tr>
-			<th>이미지</th>
+			<th></th>
 			<td><img src="${pageContext.request.contextPath }${dto.imgpath }"/></td>
 		</tr>
 		<tr>
@@ -33,8 +33,12 @@
 		<tr>
 		</tr>
 		<tr>
-			<th>별점</th><!-- 별점 / 평점 수정하기 -->
+			<th>평점</th><!-- 별점 / 평점 수정하기 -->
 			<td>${dto.stars }</td>
+		</tr>
+		<tr>
+			<th>구매처 링크</th>
+			<td></td>
 		</tr>
 		<tr>
 			<th>내용</th>
