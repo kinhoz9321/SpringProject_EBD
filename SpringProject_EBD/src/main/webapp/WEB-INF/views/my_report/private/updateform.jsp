@@ -54,10 +54,14 @@
 				<option value="5">5</option>
 			</select>
 		</div>
-		<!-- 파일 수정 불가 (새로 넣어야 됨) -->
+		<!-- 
+		파일 수정 불가 (새로 넣어야 됨) 
+		input type을 file로 하면 전에 꺼를 불러오지 못하고 이미지를 아예 새로 넣어야 되고,
+		text로 하면 전에꺼는 불러오지만 수정할 수 없음.
+		-->
 		<div>
 			<label for="image">이미지 첨부</label>
-			<input type="file" name="image" id="image"
+			<input type="text" name="image" id="image" value="${dto.imgpath }"
 				accept=".jpg, .jpeg, .png, .JPG, .JPEG"/>
 		</div>
 		<div>

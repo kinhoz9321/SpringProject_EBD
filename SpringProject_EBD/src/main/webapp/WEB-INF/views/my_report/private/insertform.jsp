@@ -45,14 +45,7 @@
 		</div>
 		<div>
 			<label for="stars">평점</label>
-			<select name="stars" id="stars">
-				<option value="">선택</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-			</select>
+			<input type="text" name="stars" id="stars"/>/5.0
 		</div>
 		<div>
 			<label for="image">이미지 첨부</label>

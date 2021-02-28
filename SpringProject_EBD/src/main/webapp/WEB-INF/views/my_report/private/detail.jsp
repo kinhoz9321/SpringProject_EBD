@@ -34,7 +34,7 @@
 		</tr>
 		<tr>
 			<th>평점</th><!-- 별점 / 평점 수정하기 -->
-			<td>${dto.stars }</td>
+			<td>${dto.stars }/5.0</td>
 		</tr>
 		<tr>
 			<th>구매처 링크</th>
