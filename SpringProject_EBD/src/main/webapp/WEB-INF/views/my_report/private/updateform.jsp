@@ -61,8 +61,8 @@
 		-->
 		<div>
 			<label for="image">이미지 첨부</label>
-			<input type="text" name="image" id="image" value="${dto.imgpath }"
-				accept=".jpg, .jpeg, .png, .JPG, .JPEG"/>
+			<input type="text" name="image" id="image" value="${pageContext.request.contextPath }${dto.imgpath }"
+				accept=".jpg, .jpeg, .png, .JPG, .JPEG" disabled/>
 		</div>
 		<div>
 			<label for="content">내용</label>

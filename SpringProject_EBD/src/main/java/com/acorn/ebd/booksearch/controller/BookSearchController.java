@@ -16,7 +16,7 @@ public class BookSearchController {
     //Ű���尡 �������� �ְ� ������������ 
     //�������� �������� �������� �Ȱ������� 
     @RequestMapping("/bookList.do")
-    public ModelAndView bookList(@RequestParam(required=false)String keyword){
+    public ModelAndView bookList(@RequestParam(required=false)String keyword){//키워드가 없어도 
         ModelAndView mav = new ModelAndView();
         
         if(keyword !=null)
