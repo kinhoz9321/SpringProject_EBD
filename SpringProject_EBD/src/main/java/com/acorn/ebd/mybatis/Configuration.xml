@@ -15,6 +15,7 @@
 			alias="wordingDto"/>
     <typeAlias type="com.acorn.ebd.report.dto.ReportDto"
 			alias="reportDto"/>
+			<typeAlias type="com.acorn.ebd.report.dto.CafeCommentDto" alias="cafeCommentDto"/>
 	</typeAliases>
 	
 
@@ -26,6 +27,7 @@
 		<mapper resource="com/acorn/ebd/mybatis/FileCmtMapper.xml"/>
 		<mapper resource="com/acorn/ebd/mybatis/WordingMapper.xml"/>
     <mapper resource="com/acorn/ebd/mybatis/ReportMapper.xml"/>
+    <mapper resource="com/acorn/ebd/mybatis/CafeCommentMapper.xml"/>
 	</mappers>
 
 

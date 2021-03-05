@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.acorn.ebd.report.dto.CafeCommentDto;
 import com.acorn.ebd.report.dto.ReportDto;
 
 public interface ReportService {
@@ -27,4 +28,9 @@ public interface ReportService {
 	
 	//공개 독후감 목록을 불러오는 메소드
 	public void getPublicList(ModelAndView mView, HttpServletRequest request);
+	//댓글을 저장하는 메소드
+	public void saveComment(HttpServletRequest request);
+	public void deleteComment(HttpServletRequest request);//댓글 삭제
+	public void updateComment(CafeCommentDto dto);//댓글 수정
+	public void moreCommentList(HttpServletRequest request);//댓글 추가 응답
 }
